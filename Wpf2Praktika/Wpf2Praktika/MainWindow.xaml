@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf2Praktika"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="167*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Lastelaagri Admin Panel" HorizontalAlignment="Center" Margin="123,69,113,0" VerticalAlignment="Top" Height="79" Width="558" FontSize="48" FontWeight="Bold"/>
+        <Button Content="Login" Margin="267,12,248,32" Grid.Row="3" FontSize="22" Click="Button_Click"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="73.666,27.666,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="73.666,22.333,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="login" HorizontalAlignment="Left" Height="30" Margin="199.667,34.266,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="421.333" FontSize="20"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="199.667,30.333,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="20" Width="421.333"/>
     </Grid>
 </Window>

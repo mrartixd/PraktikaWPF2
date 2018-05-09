@@ -24,5 +24,24 @@ namespace Wpf2Praktika
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(login.Text.ToLower().Equals("admin")  && password.Password == "admin")
+            {
+                Tables tables = new Tables();
+                tables.Show();
+                password.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Error login or password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
