@@ -78,17 +78,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ModelInputKolledz.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInputKolledz.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelInputKolledz.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInputKolledz.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelInputKolledz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInputKolledz.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Tables.xaml.cs">
       <DependentUpon>Tables.xaml</DependentUpon>
     </Compile>
     <Compile Include="tGroup.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelInputKolledz.tt</DependentUpon>
     </Compile>
     <Compile Include="tStudent.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelInputKolledz.tt</DependentUpon>
     </Compile>
     <Compile Include="tTeacher.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelInputKolledz.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +147,13 @@
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="ModelInputKolledz.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelInputKolledz.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelInputKolledz.edmx.diagram">
+      <DependentUpon>ModelInputKolledz.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +178,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelInputKolledz.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInputKolledz.edmx</DependentUpon>
+      <LastGenOutput>ModelInputKolledz.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelInputKolledz.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInputKolledz.edmx</DependentUpon>
+      <LastGenOutput>ModelInputKolledz.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

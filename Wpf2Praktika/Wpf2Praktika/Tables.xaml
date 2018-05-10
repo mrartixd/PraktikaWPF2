@@ -22,11 +22,13 @@
                             <DataGridTextColumn Binding="{Binding NameGroup}" Header="Group Name" Width="3*"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Content="Insert" HorizontalAlignment="Left" Margin="336,190.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96"/>
-                    <Button Content="Update" HorizontalAlignment="Left" Margin="336,246.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96"/>
-                    <Button Content="Delete" HorizontalAlignment="Left" Margin="336,303.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96"/>
-                    <Label Content="Group Name:" HorizontalAlignment="Left" Margin="295,62.706,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="399,65.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Insert" HorizontalAlignment="Left" Margin="336,190.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click"/>
+                    <Button Content="Update" HorizontalAlignment="Left" Margin="336,246.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_2"/>
+                    <Button Content="Delete" HorizontalAlignment="Left" Margin="336,303.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_1"/>
+                    <Label Content="Group Name:" HorizontalAlignment="Left" Margin="296,105,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="groupname" HorizontalAlignment="Left" Height="23" Margin="400,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="298,75,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="IDbox" HorizontalAlignment="Left" Height="23" Margin="400,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
         </TabControl>
