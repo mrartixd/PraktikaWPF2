@@ -29,6 +29,7 @@
                     <TextBox x:Name="groupname" HorizontalAlignment="Left" Height="23" Margin="400,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Label Content="ID:" HorizontalAlignment="Left" Margin="298,75,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="IDbox" HorizontalAlignment="Left" Height="23" Margin="400,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="search" HorizontalAlignment="Left" Height="23" Margin="22,19.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextChanged="search_TextChanged"/>
                 </Grid>
             </TabItem>
         </TabControl>

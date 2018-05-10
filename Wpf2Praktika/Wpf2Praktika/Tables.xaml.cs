@@ -19,8 +19,8 @@ namespace Wpf2Praktika
     /// </summary>
     public partial class Tables : Window
     {
-        //db_Artur_ShabunovEntities db;
-        db_Artur_ShabunovEntitiesInput db;
+        db_Artur_ShabunovEntities db;
+        //db_Artur_ShabunovEntitiesInput db;
         public Tables()
         {
             InitializeComponent();
@@ -28,8 +28,8 @@ namespace Wpf2Praktika
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //db = new db_Artur_ShabunovEntities();
-            db = new db_Artur_ShabunovEntitiesInput();
+            db = new db_Artur_ShabunovEntities();
+            //db = new db_Artur_ShabunovEntitiesInput();
             grouptable.ItemsSource = db.tGroups.ToList();
         }
 
@@ -58,6 +58,13 @@ namespace Wpf2Praktika
             uRow.NameGroup = groupname.Text;
             db.SaveChanges();
             grouptable.ItemsSource = db.tGroups.ToList();
+        }
+
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string s = search.Text;
+            //DataGridRow dataGridRow = db.tGroups.Find(s);
+
         }
     }
 }

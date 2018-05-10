@@ -1,0 +1,40 @@
+CREATE TABLE tGroup(
+ID int NOT NULL IDENTITY (1,1),
+NameGroup Nvarchar(50) NOT NULL,
+CONSTRAINT pkTeacherID PRIMARY KEY (ID),
+);
+
+CREATE TABLE tTeacher(
+ID int NOT NULL IDENTITY (1,1),
+FirstName Nvarchar(50) NOT NULL,
+LastName Nvarchar(50) NOT NULL,
+ContactEmail Nvarchar(50) NOT NULL,
+Telephone Nvarchar(50) NOT NULL,
+GroupFK int NOT NULL,
+CONSTRAINT pktTeacherID PRIMARY KEY (ID),
+CONSTRAINT chContactEmail CHECK(ContactEmail  LIKE '[a-z,0-9,_,-,.,A-Z]%@[a-z,0-9,_,-,A-Z]%.[a-z]%'),
+CONSTRAINT chTelephone CHECK(Telephone  LIKE '+%[0-9]'),
+CONSTRAINT fkGroupFK FOREIGN KEY (GroupFK)
+REFERENCES tGroup(ID),
+);
+
+
+
+CREATE TABLE tStudent(
+ID int NOT NULL IDENTITY (1,1),
+FirstName Nvarchar(50) NOT NULL,
+LastName Nvarchar(50) NOT NULL,
+IDCode int NOT NULL,
+School Nvarchar(50) NOT NULL,
+Class int NOT NULL,
+ContactEmail Nvarchar(50) NOT NULL,
+Telephone Nvarchar(50) NOT NULL,
+GroupFK int NOT NULL,
+CONSTRAINT pktStudent PRIMARY KEY (ID),
+CONSTRAINT chtContactEmail CHECK(ContactEmail  LIKE '[a-z,0-9,_,-,.,A-Z]%@[a-z,0-9,_,-,A-Z]%.[a-z]%'),
+CONSTRAINT chtTelephone CHECK(Telephone  LIKE '+%[0-9]'),
+CONSTRAINT fktGroupFK FOREIGN KEY (GroupFK)
+REFERENCES tGroup(ID),
+);
+
+
