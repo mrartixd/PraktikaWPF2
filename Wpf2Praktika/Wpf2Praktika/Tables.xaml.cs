@@ -208,7 +208,7 @@ namespace Wpf2Praktika
                 tStudent student = new tStudent();
                 student.FirstName = firstnames.Text;
                 student.LastName = lastnames.Text;
-                student.IDCode = Convert.ToInt32(idcode.Text);
+                student.IDCode = Convert.ToInt64(idcode.Text);
                 student.School = school.Text;
                 student.Class = Convert.ToInt32(_class.SelectedItem);
                 student.Telephone = telephones.Text;
@@ -238,7 +238,7 @@ namespace Wpf2Praktika
             var uRow = db.tStudents.Where(w => w.ID == num).FirstOrDefault();
             uRow.FirstName = firstnames.Text;
             uRow.LastName = lastnames.Text;
-            uRow.IDCode = Convert.ToInt32(idcode.Text);
+            uRow.IDCode = Convert.ToInt64(idcode.Text);
             uRow.School = school.Text;
             uRow.Class = Convert.ToInt32(_class.SelectedItem);
             uRow.Telephone = telephones.Text;
