@@ -5,14 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf2Praktika"
         mc:Ignorable="d"
-        Title="Tables" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Tables" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="CanMinimize">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
             <TabItem Header="Student">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="studenttable" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="284" Margin="22,59,0,0" VerticalAlignment="Top" Width="493.2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ID}" Header="ID" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding FirstName}" Header="Firstname" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding LastName}" Header="Lastname" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding IDCode}" Header="IDCODE" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding School}" Header="School" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding Class}" Header="Class" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding ContactEmail}" Header="Email" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding Telephone}" Header="Telephone" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding tGroup.NameGroup}" Header="Group" Width="3*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Insert" HorizontalAlignment="Left" Margin="610.267,283.853,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_6"  />
+                    <Button Content="Update" HorizontalAlignment="Left" Margin="548.4,328.813,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_7" />
+                    <Button Content="Delete" HorizontalAlignment="Left" Margin="674.067,328.813,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_8"/>
+                    <Label Content="Firstname:" HorizontalAlignment="Left" Margin="548.4,46.96,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="firstnames" HorizontalAlignment="Left" Height="23" Margin="650.4,49.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="351.6,19.84,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="IDboxs" HorizontalAlignment="Left" Height="23" Margin="380.807,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="IDboxs_TextChanged" KeyDown="IDboxs_KeyDown" PreviewTextInput="IDboxs_PreviewTextInput"/>
+                    <TextBox x:Name="searchs" HorizontalAlignment="Left" Height="23" Margin="67.207,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextChanged="searchs_TextChanged"  />
+                    <Label Content="Search:" HorizontalAlignment="Left" Margin="10,19.84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Lastname:" HorizontalAlignment="Left" Margin="548.4,72.92,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email:" HorizontalAlignment="Left" Margin="548.4,177.76,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Telephone:" HorizontalAlignment="Left" Margin="548.4,203.72,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="tests" Content="Group:" HorizontalAlignment="Left" Margin="548.4,229.68,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="lastnames" HorizontalAlignment="Left" Height="23" Margin="650.4,76.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="emails" HorizontalAlignment="Left" Height="23" Margin="650.4,181.76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="telephones" HorizontalAlignment="Left" Height="23" Margin="650.4,207.72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="groups" HorizontalAlignment="Left" Margin="650.4,233.68,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="IDCODE:" HorizontalAlignment="Left" Margin="548.4,98.88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="School:" HorizontalAlignment="Left" Margin="548.4,124.84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Class:" HorizontalAlignment="Left" Margin="548.4,150.8,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="idcode" HorizontalAlignment="Left" Height="23" Margin="650.4,101.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="school" HorizontalAlignment="Left" Height="23" Margin="650.4,127.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="_class" HorizontalAlignment="Left" Margin="650.4,154.8,0,0" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+
             </TabItem>
             <TabItem Header="Teacher">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="teachertable" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="284" Margin="22,59,0,0" VerticalAlignment="Top" Width="493.2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding ID}" Header="ID" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding FirstName}" Header="Firstname" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding LastName}" Header="Lastname" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding ContactEmail}" Header="Email" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding Telephone}" Header="Telephone" Width="3*"/>
+                            <DataGridTextColumn Binding="{Binding tGroup.NameGroup}" Header="Group" Width="3*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Insert" HorizontalAlignment="Left" Margin="586.4,190.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_4" />
+                    <Button Content="Update" HorizontalAlignment="Left" Margin="586.4,246.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_5" />
+                    <Button Content="Delete" HorizontalAlignment="Left" Margin="586.4,303.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_3"/>
+                    <Label Content="Firstname:" HorizontalAlignment="Left" Margin="548.4,46.96,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="firstnamet" HorizontalAlignment="Left" Height="23" Margin="650.4,49.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="355.866,17.88,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="IDboxt" HorizontalAlignment="Left" Height="23" Margin="385.073,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="IDboxt_TextChanged" PreviewTextInput="IDboxt_PreviewTextInput" KeyDown="IDboxt_KeyDown"/>
+                    <TextBox x:Name="searcht" HorizontalAlignment="Left" Height="23" Margin="67.207,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextChanged="searcht_TextChanged" />
+                    <Label Content="Search:" HorizontalAlignment="Left" Margin="10,19.84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Lastname:" HorizontalAlignment="Left" Margin="548.4,72.92,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email:" HorizontalAlignment="Left" Margin="548.4,98.88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Telephone:" HorizontalAlignment="Left" Margin="548.4,124.84,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="test" Content="Group:" HorizontalAlignment="Left" Margin="548.4,150.8,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="lastnamet" HorizontalAlignment="Left" Height="23" Margin="650.4,76.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="emailt" HorizontalAlignment="Left" Height="23" Margin="650.4,102.88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="telephonet" HorizontalAlignment="Left" Height="23" Margin="650.4,128.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox x:Name="groupt" HorizontalAlignment="Left" Margin="650.4,154.8,0,0" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+
             </TabItem>
             <TabItem Header="Group">
                 <Grid Background="#FFE5E5E5">
@@ -27,9 +94,10 @@
                     <Button Content="Delete" HorizontalAlignment="Left" Margin="336,303.04,0,0" VerticalAlignment="Top" Width="87" Height="39.96" Click="Button_Click_1"/>
                     <Label Content="Group Name:" HorizontalAlignment="Left" Margin="296,105,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="groupname" HorizontalAlignment="Left" Height="23" Margin="400,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="ID:" HorizontalAlignment="Left" Margin="298,75,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="IDbox" HorizontalAlignment="Left" Height="23" Margin="400,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="search" HorizontalAlignment="Left" Height="23" Margin="22,19.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextChanged="search_TextChanged"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="336,17.88,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="IDbox" HorizontalAlignment="Left" Height="23" Margin="391.467,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="IDbox_TextChanged" KeyDown="IDbox_KeyDown" PreviewTextInput="IDbox_PreviewTextInput"/>
+                    <TextBox x:Name="search" HorizontalAlignment="Left" Height="23" Margin="67.207,20.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" TextChanged="search_TextChanged"/>
+                    <Label Content="Search:" HorizontalAlignment="Left" Margin="10,19.84,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>
