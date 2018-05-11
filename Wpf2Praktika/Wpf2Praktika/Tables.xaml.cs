@@ -220,9 +220,9 @@ namespace Wpf2Praktika
                 studenttable.ItemsSource = db.tStudents.ToList();
                 ClearBox();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error while editing. Check: email, telephone number, group", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error while editing. Check: email, telephone number, group"+ ex.ToString() , "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                
             }
            
@@ -236,21 +236,21 @@ namespace Wpf2Praktika
             {
             int num = Convert.ToInt32(IDboxs.Text);
             var uRow = db.tStudents.Where(w => w.ID == num).FirstOrDefault();
-            uRow.FirstName = firstnamet.Text;
-            uRow.LastName = lastnamet.Text;
+            uRow.FirstName = firstnames.Text;
+            uRow.LastName = lastnames.Text;
             uRow.IDCode = Convert.ToInt32(idcode.Text);
             uRow.School = school.Text;
             uRow.Class = Convert.ToInt32(_class.SelectedItem);
-            uRow.Telephone = telephonet.Text;
-            uRow.ContactEmail = emailt.Text;
+            uRow.Telephone = telephones.Text;
+            uRow.ContactEmail = emails.Text;
             uRow.GroupFK = Convert.ToInt32(((ComboBoxItem)groups.SelectedItem).HiddenValue);
             db.SaveChanges();
             studenttable.ItemsSource = db.tStudents.ToList();
             ClearBox();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error while editing. Check: email, telephone number, group", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Error while editing. Check: email, telephone number, group" + ex.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
         }
